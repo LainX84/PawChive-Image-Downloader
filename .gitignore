@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local application data (never commit archives, databases or logs)
+PawChiveDownloader/
+Archive/
+Temp/
+Database/
+Logs/
+*.db
+*.db-wal
+*.db-shm
+*.part
+*.log
+settings.json
+cookies.txt
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build output
+*.spec.bak
+packaging/icons/app-*.png

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pawchive-image-downloader"
+version = "1.0.0"
+description = "Desktop application that monitors PawChive authors and keeps an organized, incremental archive of their original-resolution publications."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "LainX84" }]
+keywords = ["pawchive", "archive", "downloader", "pyside6"]
+requires-python = ">=3.11"
+dependencies = ["PySide6>=6.6", "httpx>=0.27", "keyring>=24", "platformdirs>=4"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Environment :: X11 Applications :: Qt",
+]
+
+[project.urls]
+Homepage = "https://github.com/LainX84/PawChive-Image-Downloader"
+Issues = "https://github.com/LainX84/PawChive-Image-Downloader/issues"
+Changelog = "https://github.com/LainX84/PawChive-Image-Downloader/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "respx>=0.21"]
+build = ["pyinstaller>=6.10"]
+
+[project.gui-scripts]
+pawchive-downloader = "pawchive_downloader.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"pawchive_downloader.storage" = ["migrations/*.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
