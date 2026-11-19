@@ -12,12 +12,15 @@ venv/
 .coverage
 htmlcov/
 
-# Local application data (never commit archives, databases or logs)
-PawChiveDownloader/
-Archive/
-Temp/
-Database/
-Logs/
+# Local application data (never commit archives, databases or logs).
+# Anchored with "/" so that they only match folders at the top of the project:
+# on Windows git ignores case, and "Archive/" would also hide src/pawchive_downloader/archive/.
+/download/
+/PawChiveDownloader/
+/Archive/
+/Temp/
+/Database/
+/Logs/
 *.db
 *.db-wal
 *.db-shm
