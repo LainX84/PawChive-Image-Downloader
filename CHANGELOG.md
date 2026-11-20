@@ -6,6 +6,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 
 ## [Unreleased]
 
+### Fixed
+- Pages of a publication without page numbers in its title were shown out of order in the archive
+  folder: the original file names do not sort like the website (the post's main image, e.g. `-98`,
+  is shown first) and file dates follow parallel download completion. Such files now get a
+  sequence number in website order (`2026-11-17 - 01 - Red Femboy-98.jpg`). Run **Rebuild archive…**
+  on an author to rename files that were already downloaded.
+
 ## [1.0.0] - 2026-11-19
 
 First public release.

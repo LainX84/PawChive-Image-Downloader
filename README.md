@@ -258,7 +258,9 @@ File naming rules:
 - one image with a page number → `Page 35.png`;
 - a page range matching the number of images → `Page 10.png`, `Page 11.png`, …;
 - several images with one page number → `Page 35 (1).png`, `Page 35 (2).png`;
-- no page number → `2026-01-02 - original name.png`;
+- no page number, one image → `2026-01-02 - original name.png`;
+- no page number, several images → `2026-01-02 - 01 - original name.png`, `2026-01-02 - 02 - …`,
+  numbered in the order shown on the website (original names and file dates do not reliably sort);
 - non-image attachments keep their original name;
 - a different file wanting a name already taken gets ` (2)`, ` (3)`… — **nothing is ever overwritten**.
 

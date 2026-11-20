@@ -110,8 +110,18 @@ def plan_file_names(
                     info.position, page, safe_file_name(f"Page {page} ({index})", info.extension)
                 )
     else:
-        for info in images:
+        # No page number in the title: keep the order shown on the website.
+        # The original names cannot be trusted to sort correctly (the post's
+        # main image is often a high-numbered file shown first, e.g.
+        # "Comic-98.jpg" before "Comic-71.jpg"), and file dates are random
+        # because downloads finish in parallel. A zero-padded sequence number
+        # makes every file browser show the pages in the website's order.
+        in_post_order = sorted(images, key=lambda f: f.position)
+        width = max(2, len(str(len(in_post_order))))
+        for index, info in enumerate(in_post_order, start=1):
             stem = PurePath(info.original_name).stem or "image"
+            if len(in_post_order) > 1:
+                stem = f"{index:0{width}d} - {stem}"
             if date_prefix:
                 stem = f"{date_prefix} - {stem}"
             planned[info.position] = PlannedName(info.position, None, safe_file_name(stem, info.extension))

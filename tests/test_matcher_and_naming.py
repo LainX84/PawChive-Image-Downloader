@@ -90,6 +90,18 @@ def test_no_page_uses_date_and_original_name_and_extras_keep_names():
     assert names == ["2026-01-02 - Bunny.png", "SpookyBarbara.7z", "clip.mp4"]
 
 
+def test_no_page_several_images_follow_website_order():
+    # Real case (Nanorumi, "NTR Experience - PART 3"): the main file -98 is shown
+    # first on the website, followed by -71 ... -94.
+    names_on_site = ["Red Femboy-98.jpg"] + [f"Red Femboy-{n}.jpg" for n in range(71, 95)]
+    files = [FileInfo(i, name, "jpg", "image") for i, name in enumerate(names_on_site)]
+    names = [p.file_name for p in plan_file_names(files, None, None, PUBLISHED)]
+    assert names[0] == "2026-01-02 - 01 - Red Femboy-98.jpg"
+    assert names[1] == "2026-01-02 - 02 - Red Femboy-71.jpg"
+    assert names[-1] == "2026-01-02 - 25 - Red Femboy-94.jpg"
+    assert sorted(names) == names  # name order == website order
+
+
 def test_names_unique_within_post():
     files = [FileInfo(0, "a.png", "png", "image"), FileInfo(1, "a.png", "png", "image")]
     names = [p.file_name for p in plan_file_names(files, None, None, None)]
