@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pawchive-image-downloader"
-version = "1.0.0"
+version = "1.0.1"
 description = "Desktop application that monitors PawChive authors and keeps an organized, incremental archive of their original-resolution publications."
 readme = "README.md"
 license = { text = "MIT" }

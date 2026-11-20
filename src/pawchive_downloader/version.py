@@ -1,6 +1,6 @@
 """Application identity and version information."""
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 APP_NAME = "PawChive Image Downloader"
 APP_ID = "PawChiveDownloader"  # used for config/data directory names and keyring

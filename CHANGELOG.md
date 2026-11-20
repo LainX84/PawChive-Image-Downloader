@@ -6,6 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-20
+
 ### Fixed
 - Pages of a publication without page numbers in its title were shown out of order in the archive
   folder: the original file names do not sort like the website (the post's main image, e.g. `-98`,
@@ -61,5 +63,6 @@ First public release.
 - Released under the MIT License, with a disclaimer (`DISCLAIMER.md`) and third-party notices
   (`THIRD_PARTY_NOTICES.md`).
 
-[Unreleased]: https://github.com/LainX84/PawChive-Image-Downloader/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/LainX84/PawChive-Image-Downloader/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/LainX84/PawChive-Image-Downloader/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/LainX84/PawChive-Image-Downloader/releases/tag/v1.0.0
